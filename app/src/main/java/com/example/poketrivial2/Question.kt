@@ -83,7 +83,7 @@ enum class Questions(val question: TriviaQuestion) {
     ),
     QUESTION_9(
         TriviaQuestion(
-            "Name three Pokémon that have the ability to Mega Evolve and share a base stat total of 700.",
+            "Which pokemon has the ability to Mega Evolve and has a base stat total of 700.",
             R.drawable.question9,
             listOf("Mega Charizard X", "Mega Alakazam", "Mega Blastoise", "Mega Tyranitar"),
             "Mega Charizard X, Mega Alakazam, Mega Blastoise",
@@ -204,4 +204,10 @@ enum class Questions(val question: TriviaQuestion) {
             Difficulty.MEDIUM
         )
     ),
+}
+
+
+fun getRandomUniqueQuestion(usedQuestions: List<TriviaQuestion>): TriviaQuestion {
+    val unusedQuestions = Questions.values().filterNot { it.question in usedQuestions }
+    return unusedQuestions.random().question
 }

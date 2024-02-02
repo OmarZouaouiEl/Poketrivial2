@@ -1,6 +1,11 @@
+
+package com.example.poketrivial2
 import androidx.compose.foundation.BorderStroke
+import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
+import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.MaterialTheme
@@ -12,7 +17,9 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -40,9 +47,16 @@ fun MenuScreen(navController: NavController) {
                 color = Color.White
             )
             Spacer(modifier = Modifier.height(16.dp))
+            Image(
+                painter = painterResource(id = R.drawable.logo),
+                contentDescription = "Example",
+
+
+            )
+            Spacer(modifier = Modifier.height(16.dp))
 
             Button(
-                onClick = { navController.navigate(Routes.Pantalla3.route) },
+                onClick = { navController.navigate(Routes.GameScreen.route) },
                 colors = ButtonDefaults.buttonColors(
                     containerColor = Color.Blue,
                     contentColor = Color.Red
@@ -56,7 +70,7 @@ fun MenuScreen(navController: NavController) {
             }
 
             Button(
-                onClick = { },
+                onClick = { navController.navigate(Routes.SettingsScreen.route) },
                 colors = ButtonDefaults.buttonColors(
                     containerColor = Color.Blue,
                     contentColor = Color.Red

@@ -1,8 +1,5 @@
-import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
-import androidx.compose.material3.Button
-import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -14,7 +11,7 @@ import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 
 @Composable
-fun ResultScreen(navController: NavController, userScore: Int, onPlayAgain: () -> Unit) {
+fun ResultScreen(navController: NavController, userScore: Int.Companion, ) {
     Box(
         modifier = Modifier.fillMaxSize().background(Color.Gray),
         contentAlignment = Alignment.Center
@@ -44,20 +41,7 @@ fun ResultScreen(navController: NavController, userScore: Int, onPlayAgain: () -
 
             Spacer(modifier = Modifier.height(32.dp))
 
-            Button(
-                onClick = {
-                    // Call the provided callback to play again
-                    onPlayAgain()
-                },
-                colors = ButtonDefaults.buttonColors(
-                    containerColor = Color.Blue,
-                    contentColor = Color.Red
-                ),
-                border = BorderStroke(5.dp, Color.Green),
-                modifier = Modifier.fillMaxWidth()
-            ) {
-                Text(text = "Play Again")
-            }
+
         }
     }
 }
